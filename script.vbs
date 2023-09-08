@@ -5,7 +5,7 @@ logFile = WshShell.ExpandEnvironmentStrings("%TEMP%\script_log.txt")
 
 Function RunCommand(command)
     WshShell.Run command & " >> """ & logFile & """ 2>&1", 0, True ' Redirecting stdout and stderr to logFile
-    WScript.Sleep 3000 ' Wait for 3 seconds
+    WScript.Sleep 4000 ' Wait for 3 seconds
 End Function
 
 ' First PowerShell Command
