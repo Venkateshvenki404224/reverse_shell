@@ -4,7 +4,7 @@ Dim logFile
 logFile = WshShell.ExpandEnvironmentStrings("%TEMP%\script_log.txt")
 
 Function RunCommand(command)
-    WshShell.Run command & " >> """ & logFile & """ 2>&1", 1, True ' Redirecting stdout and stderr to logFile
+    WshShell.Run command & " >> """ & logFile & """ 2>&1", 0, True ' Redirecting stdout and stderr to logFile
     WScript.Sleep 3000 ' Wait for 3 seconds
 End Function
 
